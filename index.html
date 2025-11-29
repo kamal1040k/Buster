@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Splash Video</title>
+<style>
+  /* CSS to force the 9:16 aspect ratio. 
+    A common approach is to set the width and then calculate the height 
+    (or vice-versa) based on the 9:16 ratio.
+    For demonstration, we'll set a fixed size.
+  */
+  #splashVideo {
+    /* Standard portrait resolution equivalent to 9:16 */
+    width: 360px;  
+    height: 640px; 
+    /* Ensures the video maintains its aspect ratio within the box */
+    object-fit: cover; 
+    display: block; /* Helps with centering if needed */
+    margin: 0 auto; /* Centers the video horizontally */
+  }
+</style>
+</head>
+<body>
+
+  <video id="splashVideo" autoplay>
+    <source src="splash.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    // Get a reference to the video element
+    var video = document.getElementById('splashVideo');
+
+    // Add an event listener that fires when the video has ended
+    video.addEventListener('ended', function() {
+      // Redirect the user to the login.html page
+      window.location.href = 'login.html';
+    });
+  </script>
+
+</body>
+</html>
